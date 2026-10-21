@@ -1,5 +1,19 @@
 <h1>Pistas disponibles</h1>
 
+{% if user.is_authenticated %} 
+   <p>Hola, {{ user.username }}</p>
+   <form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+        <button>Cerrar sesión</button>
+   </form>
+   
+
+    {% else %} 
+    <p>No has iniciado sesión</p>
+    <a href="{% url 'login' %}">Iniciar sesión</a>
+
+    {% endif %}
+
 <ul>
   {% for pista in pistas %}
     <li>{{ pista.nombre }} ({{ pista.get_tipo_display }})</li>
