@@ -2,6 +2,7 @@
 
 {% if user.is_authenticated %} 
    <p>Hola, {{ user.username }}</p>
+   <a href="{% url 'crear_reserva' %}">Reservar</a>
    <form action="{% url 'logout' %}" method="post">
     {% csrf_token %}
         <button>Cerrar sesión</button>

@@ -129,3 +129,4 @@ MAILERS = {
 
 LOGIN_REDIRECT_URL = "lista_pistas"
 LOGOUT_REDIRECT_URL = "lista_pistas"
+LOGIN_URL = "login"
