@@ -1,0 +1,9 @@
+<h1>Pistas disponibles</h1>
+
+<ul>
+  {% for pista in pistas %}
+    <li>{{ pista.nombre }} ({{ pista.get_tipo_display }})</li>
+  {% empty %}
+    <li>No hay pistas disponibles.</li>
+  {% endfor %}
+</ul>
